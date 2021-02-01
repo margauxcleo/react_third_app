@@ -24,6 +24,16 @@ const Todo = (props) => {
             <form onSubmit={handleOnSubmit}>
                 <input type="text" value={inputValue} onChange={HandleOnChange}></input>
             </form>
+            <Todo todos={todos} setTodos={setTodos}/>
+            <ul>
+                {todos.map((todo, index) => {
+                return (
+                    <li key={todo + index}>
+                    <p>{todo}</p>
+                    </li>
+                );
+                })}
+            </ul>
         </>
     );
 }
